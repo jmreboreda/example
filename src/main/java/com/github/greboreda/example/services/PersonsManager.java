@@ -30,7 +30,12 @@ public class PersonsManager {
 
 	public List<Person> findAllPersons() {
 		
-		List<Person> persons = personDao.findAllPersons();
+		List<PersonVO> personsVO = personDao.findAllPersons();
+		
+		List<Person> persons = new ArrayList<Person>();
+		for(PersonVO personVO : personsVO) {
+			persons.add(PersonMapper.proccessVOBO(personVO, null));
+		}
 		
 		for(Person person : persons) {
 			List<Telephone> telephones = this.findTelephonesByPersonId(person.getId());

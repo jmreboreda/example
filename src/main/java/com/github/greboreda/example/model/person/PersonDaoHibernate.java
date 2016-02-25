@@ -1,6 +1,5 @@
 package com.github.greboreda.example.model.person;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -12,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.github.greboreda.example.model.dao.GenericDaoHibernate;
 import com.github.greboreda.example.model.exceptions.daoexceptions.InstanceNotFoundException;
-import com.github.greboreda.example.model.mappers.PersonMapper;
 
 @Repository("personDao")
 @Transactional
@@ -39,7 +37,7 @@ public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> imple
 	}
 
 	@Override
-	public List<Person> findAllPersons() {
+	public List<PersonVO> findAllPersons() {
 		
 		Session session = sessionFactory.getCurrentSession();
 		
@@ -47,13 +45,8 @@ public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> imple
 		
 		@SuppressWarnings("unchecked")
 		List<PersonVO> personsVO = (List<PersonVO>) query.list();
-		
-		List<Person> persons = new ArrayList<Person>();
-		for(PersonVO personVO : personsVO) {
-			persons.add(PersonMapper.proccessVOBO(personVO, null));
-		}
-		
-		return persons;
+
+		return personsVO;
 	}
 
 }
