@@ -17,9 +17,9 @@ public class IndexController {
 	
 	public void createPerson(String name) throws Exception{
 		
-        if (name == null || name.trim().isEmpty()) {
-        	throw new Exception("name is null or empty");
-        }
+		if (name == null || name.trim().isEmpty()) {
+			throw new Exception("name is null or empty");
+		}
 		
 		Person p = new Person();
 		p.setName(name);
