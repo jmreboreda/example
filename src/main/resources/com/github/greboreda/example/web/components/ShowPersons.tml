@@ -1,11 +1,37 @@
 <t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
-	<t:unless test="personsToShow">
-		<p>No hay personas</p>
-	</t:unless>
-	<ul t:type="loop" source="personsToShow" value="currentPerson">
-		<li>
-			<span>Nombre: ${currentPerson.name}</span>
-		</li>
-	</ul>
+
+	<div class="panel panel-default">
+	
+		<div class="panel-heading">
+			Personas guardadas
+		</div>
+
+		<div class="panel-body">
+			<t:unless test="personsToShow">
+				<p>No hay personas</p>
+			</t:unless>
+			
+			<table class="table table-striped">
+			
+				<tr>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>DNI</th>
+				</tr>
+				
+				<t:loop source="personsToShow" value="currentPerson">
+				<tr>
+					<td>${currentPerson.name}</td>
+					<td></td>
+					<td></td>
+				</tr>
+				</t:loop>
+			
+			</table>
+			
+		</div>
+
+	</div>
+
 </t:container>
 

@@ -1,8 +1,30 @@
 <t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
 	<t:form t:id="names">
-		<t:errors/>
-		<t:label for="firstName">Añadir persona: </t:label>
-		<t:textfield t:id="firstName" placeholder="Nombre"/>
-		<input type="submit" value="Añadir"/>
+
+		<div class="panel panel-default">			
+
+			<div class="panel-heading">
+				<t:label for="firstName">Añadir persona</t:label>
+			</div>
+			
+			<div class="panel-body">
+
+				<div class="row">
+					<t:errors/>
+				</div>
+
+				<div class="row">
+					<div class="col-md-10">	
+						<t:textfield t:id="firstName" placeholder="Nombre"/>
+					</div>
+					<div class="col-md-2">
+						<input type="submit" class="btn btn-primary" value="Añadir"/>
+					</div>
+				</div>
+				
+			</div>
+		</div>
 	</t:form>
+
 </t:container>
