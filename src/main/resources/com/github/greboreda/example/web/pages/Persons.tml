@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+
+	<head>
+		<meta charset="utf-8" />	 
+		<title>${message:appTitle}</title>
+	</head>
+
+	<body>
+	
+		<h1>App de ejemplo</h1>
+	
+		<t:addperson/>		
+		<t:showpersons personsToShow="persons"/>
+		
+	</body>
+
+</html>

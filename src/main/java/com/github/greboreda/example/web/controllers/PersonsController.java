@@ -10,7 +10,7 @@ import com.github.greboreda.example.model.person.Person;
 import com.github.greboreda.example.services.PersonsManager;
 
 @Service
-public class IndexController {
+public class PersonsController {
 
 	@Autowired
 	PersonsManager personsManager;

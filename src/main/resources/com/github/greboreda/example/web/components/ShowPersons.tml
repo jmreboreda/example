@@ -1,0 +1,11 @@
+<t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+	<t:unless test="personsToShow">
+		<p>No hay personas</p>
+	</t:unless>
+	<ul t:type="loop" source="personsToShow" value="currentPerson">
+		<li>
+			<span>Nombre: ${currentPerson.name}</span>
+		</li>
+	</ul>
+</t:container>
+
