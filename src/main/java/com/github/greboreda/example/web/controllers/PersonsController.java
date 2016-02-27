@@ -15,14 +15,19 @@ public class PersonsController {
 	@Autowired
 	PersonsManager personsManager;
 	
-	public void createPerson(String name) throws Exception{
+	public void createPerson(String name, String lastName) throws Exception{
 		
 		if (name == null || name.trim().isEmpty()) {
 			throw new Exception("name is null or empty");
 		}
 		
+		if (lastName == null || lastName.trim().isEmpty()) {
+			throw new Exception("Lastname is null or empty");
+		}
+		
 		Person p = new Person();
 		p.setName(name);
+		p.setLastName(lastName);
 		personsManager.createPerson(p);
 	}
 	

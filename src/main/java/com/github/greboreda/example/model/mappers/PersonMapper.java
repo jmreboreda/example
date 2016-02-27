@@ -21,6 +21,7 @@ public class PersonMapper {
 		
 		person.setId(personVO.getId());
 		person.setName(personVO.getName());
+		person.setLastName(personVO.getLastName());
 		
 		if(CollectionUtils.isEmpty(telephones) == false) {
 		
@@ -48,6 +49,7 @@ public class PersonMapper {
 
 		personVO.setId(person.getId());
 		personVO.setName(person.getName());
+		personVO.setLastName(person.getLastName());
 		
 		return personVO;
 	}

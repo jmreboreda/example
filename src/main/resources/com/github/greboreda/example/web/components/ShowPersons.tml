@@ -15,13 +15,19 @@
 			
 				<tr>
 					<th>Nombre</th>
-					<th>Apellido</th>
+					<th>Apellidos</th>
 					<th>DNI</th>
+					<th>Dirección</th>
+					<th>CodPostal</th>
+					<th>Localidad</th>
 				</tr>
 				
 				<t:loop source="personsToShow" value="currentPerson">
 				<tr>
 					<td>${currentPerson.name}</td>
+					<td>${currentPerson.lastName}</td>
+					<td></td>
+					<td></td>
 					<td></td>
 					<td></td>
 				</tr>

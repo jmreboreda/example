@@ -12,6 +12,7 @@ public class Person implements BusinessObject {
 
 	private Long id;
 	private String name;
+	private String lastName;
 	private List<Telephone> telephones;
 
 	public Person() {
@@ -29,6 +30,14 @@ public class Person implements BusinessObject {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public void setTelephones(List<Telephone> telephones) {

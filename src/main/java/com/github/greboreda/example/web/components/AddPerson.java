@@ -15,6 +15,9 @@ public class AddPerson {
 	
 	@Property
 	private String firstName;
+	
+	@Property
+	private String lastName;
 
 	@InjectComponent("names")
 	private Form form;
@@ -22,12 +25,16 @@ public class AddPerson {
 	@InjectComponent("firstName")
 	private TextField firstNameField;
 	
+	@InjectComponent("lastName")
+	private TextField lastNameField;
+	
 	
 	void onValidateFromNames() {
 		try {
-			personsController.createPerson(firstName);
+			personsController.createPerson(firstName, lastName);
 		} catch (Exception e) {
 			form.recordError(firstNameField, "First Name is required.");
+			form.recordError(lastNameField, "Lastname is required.");
 		}
 	}
 }
