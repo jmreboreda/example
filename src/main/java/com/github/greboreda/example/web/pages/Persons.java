@@ -28,5 +28,4 @@ public class Persons {
 	void beginRender() {
 		persons = personsController.findAllPersons();    	
 	}
-	
 }

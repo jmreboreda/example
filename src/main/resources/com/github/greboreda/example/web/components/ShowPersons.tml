@@ -12,28 +12,27 @@
 				<p>No hay personas</p>
 			</t:unless>
 			
-			<table class="table table-striped">
-			
-				<tr>
-					<th>Nombre</th>
-					<th>Apellidos</th>
-					<th>DNI</th>
-					<th>Dirección</th>
-					<th>CodPostal</th>
-					<th>Localidad</th>
-				</tr>
-				
-				<t:loop source="personsToShow" value="currentPerson">
-				<tr>
-					<td>${currentPerson.name}</td>
-					<td>${currentPerson.lastName}</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				</t:loop>
-			
+			<table class="table table-condensed table-striped">			
+					<tr>
+						<th>Nombre</th>
+						<th>Apellidos</th>
+						<th>NIF</th>
+						<th>Dirección</th>
+						<th>CodPostal</th>
+						<th>Localidad</th>
+						
+					</tr>
+					
+					<t:loop source="personsToShow" value="currentPerson">
+					<tr>
+						<td>${currentPerson.name}</td>
+						<td>${currentPerson.lastName}</td>
+						<td>${currentPerson.nif}</td>
+						<td>${currentPerson.address}</td>
+						<td>${currentPerson.postalCode}</td>
+						<td>${currentPerson.location}</td>
+					</tr>
+					</t:loop>
 			</table>
 			
 		</div>

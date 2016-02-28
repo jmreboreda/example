@@ -13,6 +13,10 @@ public class Person implements BusinessObject {
 	private Long id;
 	private String name;
 	private String lastName;
+	private String nif;
+	private String address;
+	private String postalCode;
+	private String location;
 	private List<Telephone> telephones;
 
 	public Person() {
@@ -40,6 +44,38 @@ public class Person implements BusinessObject {
 		this.lastName = lastName;
 	}
 
+	public String getNif() {
+		return nif;
+	}
+
+	public void setNif(String nif) {
+		this.nif = nif;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
 	public void setTelephones(List<Telephone> telephones) {
 		this.telephones = telephones;
 	}
@@ -50,7 +86,5 @@ public class Person implements BusinessObject {
 	
 	public List<Telephone> getTelephones() {
 		return this.telephones;
-	}
-	
-	
+	}	
 }
