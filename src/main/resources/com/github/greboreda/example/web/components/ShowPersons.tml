@@ -1,9 +1,10 @@
 <t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 
 	<div class="panel panel-default">
-	
-		<div class="panel-heading">
+		<div class="panel panel-info">
+			<div class="panel-heading">
 			Personas guardadas
+			</div>
 		</div>
 
 		<div class="panel-body">
