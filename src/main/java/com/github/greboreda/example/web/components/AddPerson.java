@@ -61,7 +61,7 @@ public class AddPerson {
 			form.recordError(nifField, "NIF is required.");
 			form.recordError(addressField, "Address is required.");
 			form.recordError(postalCodeField, "Postal code is required.");
-			form.recordError(locationField, "Location code is required.");
+			form.recordError(locationField, "Location is required.");
 		}
 	}
 }
