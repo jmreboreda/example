@@ -21,6 +21,11 @@ public class PersonMapper {
 		
 		person.setId(personVO.getId());
 		person.setName(personVO.getName());
+		person.setLastName(personVO.getLastName());
+		person.setNif(personVO.getNif());
+		person.setAddress(personVO.getAddress());
+		person.setPostalCode(personVO.getPostalCode());
+		person.setLocation(personVO.getLocation());
 		
 		if(CollectionUtils.isEmpty(telephones) == false) {
 		
@@ -48,6 +53,11 @@ public class PersonMapper {
 
 		personVO.setId(person.getId());
 		personVO.setName(person.getName());
+		personVO.setLastName(person.getLastName());
+		personVO.setNif(person.getNif());
+		personVO.setAddress(person.getAddress());
+		personVO.setPostalCode(person.getPostalCode());
+		personVO.setLocation(person.getLocation());
 		
 		return personVO;
 	}

@@ -1,0 +1,47 @@
+<t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
+	<t:form t:id="names">
+
+		<div class="panel panel-default">			
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<t:label for="firstName">Añadir persona</t:label>
+				</div>
+			</div>
+		
+			<div class="panel-body">
+<!-- 				<div class="row">
+					<t:errors/>
+				</div>
+-->
+				<div class="row">
+					<div class="col-md-2 col-md-push-0">	
+						<t:textfield t:id="firstName" placeholder="Nombre"/>
+					</div>
+					<div class="col-md-2 col-md-push-0">
+						<t:textfield t:id="lastName" placeholder="Apellidos"/>
+					</div>
+					<div class="col-md-2 col-md-push-0">
+						<t:textfield t:id="nif" placeholder="NIF"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-md-push-0">
+						<t:textfield t:id="address" placeholder="Dirección"/>
+					</div>
+					<div class="col-md-2 col-md-push-0">
+						<t:textfield t:id="postalCode" placeholder="Código postal"/>
+					</div>
+					<div class="col-md-3 col-md-push-0">
+						<t:textfield t:id="location" placeholder="Localidad"/>
+					</div>
+					<div class="col-md-2">
+						<input type="submit" class="btn btn-primary" value="Añadir"/>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</t:form>
+
+</t:container>

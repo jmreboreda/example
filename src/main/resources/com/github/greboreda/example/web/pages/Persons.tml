@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+
+	<head>
+		<meta charset="utf-8" />	 
+		<title>${message:appTitle}</title>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div class="row">					
+						<div class="jumbotron">
+							<h1 class="text-danger">Gestoría MOLDES</h1>
+							<p class="text-primary"><small>María Elena González Moldes</small></p>
+						</div>
+					</div>					
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+	
+					<div class="row">
+						<t:addperson/>
+					</div>
+	
+					<div class="row">
+						<t:showpersons personsToShow="persons"/>	
+					</div>
+	
+				</div>
+			</div>			
+		</div>
+	</body>
+		
+</html>

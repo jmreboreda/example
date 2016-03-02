@@ -1,0 +1,43 @@
+<t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
+	<div class="panel panel-default">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+			Personas guardadas
+			</div>
+		</div>
+
+		<div class="panel-body">
+			<t:unless test="personsToShow">
+				<p>No hay personas</p>
+			</t:unless>
+			
+			<table class="table table-condensed table-striped">			
+					<tr>
+						<th>Nombre</th>
+						<th>Apellidos</th>
+						<th>NIF</th>
+						<th>Dirección</th>
+						<th>CodPostal</th>
+						<th>Localidad</th>
+						
+					</tr>
+					
+					<t:loop source="personsToShow" value="currentPerson">
+					<tr>
+						<td>${currentPerson.name}</td>
+						<td>${currentPerson.lastName}</td>
+						<td>${currentPerson.nif}</td>
+						<td>${currentPerson.address}</td>
+						<td>${currentPerson.postalCode}</td>
+						<td>${currentPerson.location}</td>
+					</tr>
+					</t:loop>
+			</table>
+			
+		</div>
+
+	</div>
+
+</t:container>
+
