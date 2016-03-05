@@ -17,7 +17,8 @@ public class PersonVO implements ValueObject {
 	
 	private Long id;
 	private String name;
-	private String lastName;
+	private String lastName1;
+	private String LastName2;
 	private String nif;
 	private String address;
 	private String postalCode;
@@ -46,12 +47,20 @@ public class PersonVO implements ValueObject {
 		this.name = name;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getLastName1() {
+		return lastName1;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastName1(String lastName1) {
+		this.lastName1 = lastName1;
+	}
+
+	public String getLastName2() {
+		return LastName2;
+	}
+
+	public void setLastName2(String lastName2) {
+		LastName2 = lastName2;
 	}
 
 	public String getNif() {
