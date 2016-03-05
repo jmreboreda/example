@@ -4,16 +4,22 @@ import java.io.IOException;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 
+import org.apache.shiro.realm.Realm;
+import org.apache.shiro.web.mgt.WebSecurityManager;
 import org.apache.tapestry5.SymbolConstants;
+import org.apache.tapestry5.ioc.Configuration;
 import org.apache.tapestry5.ioc.MappedConfiguration;
 import org.apache.tapestry5.ioc.OrderedConfiguration;
 import org.apache.tapestry5.ioc.ServiceBinder;
+import org.apache.tapestry5.ioc.annotations.Contribute;
 import org.apache.tapestry5.ioc.annotations.Local;
 import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.services.RequestFilter;
 import org.apache.tapestry5.services.RequestHandler;
 import org.apache.tapestry5.services.Response;
 import org.slf4j.Logger;
+import org.tynamo.security.SecuritySymbols;
+import org.tynamo.shiro.extension.realm.text.ExtendedPropertiesRealm;
 
 /**
  * This module is automatically included as part of the Tapestry IoC Registry,
@@ -65,6 +71,8 @@ public class AppModule {
 		configuration.add(SymbolConstants.SUPPORTED_LOCALES, "en");
 		configuration.add(SymbolConstants.HMAC_PASSPHRASE, new BigInteger(130,
 				new SecureRandom()).toString(32));
+		configuration.add(SymbolConstants.JAVASCRIPT_INFRASTRUCTURE_PROVIDER, "jquery");
+		configuration.add(SecuritySymbols.SUCCESS_URL, "/index");
 	}
 	
 	/**
@@ -126,5 +134,11 @@ public class AppModule {
 		// within the pipeline.
 
 		//configuration.add("Timing", filter);
+	}
+	
+	@Contribute(WebSecurityManager.class)
+	public static void addRealms(Configuration<Realm> configuration) {
+		ExtendedPropertiesRealm realm = new ExtendedPropertiesRealm("classpath:shiro-users.properties");
+		configuration.add(realm);
 	}
 }
