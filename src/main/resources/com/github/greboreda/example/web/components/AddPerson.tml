@@ -1,4 +1,4 @@
-<t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+<t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
 
 	<t:form t:id="names">
 
