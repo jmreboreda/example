@@ -58,5 +58,8 @@ public class PersonsController {
 	public List<Person> findAllPersons() {
 		return personsManager.findAllPersons();
 	}
-	
+
+	public List<Person> findPersonsByNamePattern(String namePattern) {
+		return personsManager.findPersonsByNamePattern(namePattern);
+	}
 }

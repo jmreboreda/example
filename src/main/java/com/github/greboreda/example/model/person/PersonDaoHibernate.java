@@ -48,5 +48,26 @@ public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> imple
 
 		return personsVO;
 	}
+	
+	@Override
+	public List<PersonVO> findPersonsByNamePattern(String namePattern){
+		
+		Session session = sessionFactory.getCurrentSession();
+		
+		String queryString = 
+				" select p from PersonVO p " +
+				" where " +
+				" p.name like :pattern " +
+				" or p.lastName1 like :pattern " +
+				" or p.lastName2 like :pattern ";
+				
+		Query query = session.createQuery(queryString);
+		query.setParameter("pattern", namePattern);
+		
+		@SuppressWarnings("unchecked")
+		List<PersonVO> personsVO = (List<PersonVO>) query.list();
+		
+		return personsVO;
+	}
 
 }

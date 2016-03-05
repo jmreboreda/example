@@ -1,43 +1,73 @@
 <t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
 
+	<style>
+		.person-searcher {
+			margin-bottom: 15px;
+		}
+		.right-inner-addon i {
+			position: absolute;
+			right: 10px;
+			padding: 10px 12px;
+			pointer-events: none;
+		}
+	</style>
+
 	<div class="panel panel-default">
+
 		<div class="panel panel-info">
-			<div class="panel-heading">
-			Personas guardadas
-			</div>
+			<div class="panel-heading">Personas guardadas</div>
 		</div>
 
 		<div class="panel-body">
-			<t:unless test="personsToShow">
-				<p>No hay personas</p>
-			</t:unless>
 			
-			<table class="table table-condensed table-striped">			
-					<tr>
-						<th>Nombre</th>
-						<th>Apellidos</th>			
-						<th>NIF</th>
-						<th>Dirección</th>
-						<th>CodPostal</th>
-						<th>Localidad</th>
-						
-					</tr>
-					
-					<t:loop source="personsToShow" value="currentPerson">
-					<tr>
-						<td>${currentPerson.name}</td>
-						<td>${currentPerson.lastName1} ${currentPerson.lastName2}</td>
-						<td>${currentPerson.nif}</td>
-						<td>${currentPerson.address}</td>
-						<td>${currentPerson.postalCode}</td>
-						<td>${currentPerson.location}</td>
-					</tr>
-					</t:loop>
-			</table>
+			<div class="container-fluid">
 			
+				<div class="row person-searcher">
+					<div class="col-md-4">
+					    <div class="right-inner-addon">
+						    <i class="glyphicon glyphicon-search"></i>
+							<input class="form-control" placeholder="Buscar" type="search"></input>							
+						</div>
+					</div>
+					<div class="col-md-1">
+						<t:eventlink t:id="changeSearchPersonsInput" id="search-persons-link" zone="persons-zone">Busca!</t:eventlink>
+					</div>
+				</div>
+
+				<t:zone t:id="personsZone" id="persons-zone">		
+				<div class="row">
+				
+					<t:unless test="personsToShow">
+						<p>No hay personas</p>
+					</t:unless>
+								
+					<t:if test="personsToShow">
+					<table class="table table-condensed table-striped">			
+						<tr>
+							<th>Nombre</th>
+							<th>Apellidos</th>			
+							<th>NIF</th>
+							<th>Dirección</th>
+							<th>CodPostal</th>
+							<th>Localidad</th>
+						</tr>
+										
+						<t:loop source="personsToShow" value="currentPerson">
+						<tr>
+							<td>${currentPerson.name}</td>
+							<td>${currentPerson.lastName1} ${currentPerson.lastName2}</td>
+							<td>${currentPerson.nif}</td>
+							<td>${currentPerson.address}</td>
+							<td>${currentPerson.postalCode}</td>
+							<td>${currentPerson.location}</td>
+						</tr>
+						</t:loop>			
+					</table>
+					</t:if>
+				</div>
+				</t:zone>
+			</div>
 		</div>
-
 	</div>
-
 </t:container>
 
