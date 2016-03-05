@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd" xmlns:p="tapestry:parameter">
+
+	<head>
+		<meta charset="utf-8" />	 
+		<title>${message:appTitle}</title>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<p class="navbar-brand">Gestoría MOLDES</p>
+				<p class="navbar-text">Aplicación de control de contratos laborales</p>
+				<p class="navbar-text navbar-right">
+					${username}(<t:actionlink t:id="logout">logout</t:actionlink>)
+				</p>
+			</div>
+		</nav>
+		
+		<t:body/>
+		
+	</body>
+
+
+</html>

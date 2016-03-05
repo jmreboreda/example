@@ -115,6 +115,11 @@
 			<version>5.4.0</version>
 		</dependency>
 		<dependency>
+			<groupId>org.tynamo</groupId>
+			<artifactId>tapestry-security</artifactId>
+			<version>0.6.3</version>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-compress</artifactId>
 			<version>1.4.1</version>
