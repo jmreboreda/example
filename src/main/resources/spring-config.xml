@@ -16,7 +16,7 @@ default-lazy-init="true">
 		p:jndiName="jdbc/dataSource"
 		p:resourceRef="true"/>
 
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 
 		<property name="dataSource">
 			<ref bean="dataSource" />
@@ -43,7 +43,7 @@ default-lazy-init="true">
 	<bean id="logger" class="org.slf4j.Logger" />
 		
 	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate4.HibernateTransactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager"
 		p:sessionFactory-ref="sessionFactory" />
 	
 	
