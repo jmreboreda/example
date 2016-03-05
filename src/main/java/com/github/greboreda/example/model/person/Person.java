@@ -12,7 +12,8 @@ public class Person implements BusinessObject {
 
 	private Long id;
 	private String name;
-	private String lastName;
+	private String lastName1;
+	private String lastName2;
 	private String nif;
 	private String address;
 	private String postalCode;
@@ -36,14 +37,22 @@ public class Person implements BusinessObject {
 		this.name = name;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getLastName1() {
+		return lastName1;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastName1(String lastName) {
+		this.lastName1 = lastName;
+	}
+	
+	public String getLastName2() {
+		return lastName2;
 	}
 
+	public void setLastName2(String lastName2) {
+		this.lastName2 = lastName2;
+	}
+	
 	public String getNif() {
 		return nif;
 	}

@@ -21,7 +21,8 @@ public class PersonMapper {
 		
 		person.setId(personVO.getId());
 		person.setName(personVO.getName());
-		person.setLastName(personVO.getLastName());
+		person.setLastName1(personVO.getLastName1());
+		person.setLastName2(personVO.getLastName2());
 		person.setNif(personVO.getNif());
 		person.setAddress(personVO.getAddress());
 		person.setPostalCode(personVO.getPostalCode());
@@ -53,7 +54,8 @@ public class PersonMapper {
 
 		personVO.setId(person.getId());
 		personVO.setName(person.getName());
-		personVO.setLastName(person.getLastName());
+		personVO.setLastName1(person.getLastName1());
+		personVO.setLastName2(person.getLastName2());
 		personVO.setNif(person.getNif());
 		personVO.setAddress(person.getAddress());
 		personVO.setPostalCode(person.getPostalCode());

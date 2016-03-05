@@ -17,7 +17,10 @@ public class AddPerson {
 	private String firstName;
 	
 	@Property
-	private String lastName;
+	private String lastName1;
+	
+	@Property
+	private String lastName2;	
 	
 	@Property
 	private String nif;
@@ -37,8 +40,11 @@ public class AddPerson {
 	@InjectComponent("firstName")
 	private TextField firstNameField;
 	
-	@InjectComponent("lastName")
-	private TextField lastNameField;
+	@InjectComponent("lastName1")
+	private TextField lastName1Field;
+	
+	@InjectComponent("lastName2")
+	private TextField lastName2Field;
 	
 	@InjectComponent("nif")
 	private TextField nifField;
@@ -54,10 +60,11 @@ public class AddPerson {
 	
 	void onValidateFromNames() {
 		try {
-			personsController.createPerson(firstName, lastName, nif, address, postalCode, location);
+			personsController.createPerson(firstName, lastName1, lastName2, nif, address, postalCode, location);
 		} catch (Exception e) {
 			form.recordError(firstNameField, "First Name is required.");
-			form.recordError(lastNameField, "Lastname is required.");
+			form.recordError(lastName1Field, "Lastname1 is required.");
+			form.recordError(lastName2Field, "Lastname2 is required.");
 			form.recordError(nifField, "NIF is required.");
 			form.recordError(addressField, "Address is required.");
 			form.recordError(postalCodeField, "Postal code is required.");

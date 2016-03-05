@@ -19,7 +19,10 @@
 						<t:textfield t:id="firstName" placeholder="Nombre"/>
 					</div>
 					<div class="col-md-2 col-md-push-0">
-						<t:textfield t:id="lastName" placeholder="Apellidos"/>
+						<t:textfield t:id="lastName1" placeholder="Apellido 1º"/>
+					</div>
+					<div class="col-md-2 col-md-push-0">
+						<t:textfield t:id="lastName2" placeholder="Apellido 2º"/>
 					</div>
 					<div class="col-md-2 col-md-push-0">
 						<t:textfield t:id="nif" placeholder="NIF"/>

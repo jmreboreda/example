@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.github.greboreda.example.model.person.Person;
 import com.github.greboreda.example.services.PersonsManager;
 
@@ -15,14 +14,18 @@ public class PersonsController {
 	@Autowired
 	PersonsManager personsManager;
 	
-	public void createPerson(String name, String lastName, String nif, String address, String postalCode, String location) throws Exception{
+	public void createPerson(String name, String lastName1, String lastName2, String nif, String address, String postalCode, String location) throws Exception{
 		
 		if (name == null || name.trim().isEmpty()) {
 			throw new Exception("name is null or empty");
 		}
 		
-		if (lastName == null || lastName.trim().isEmpty()) {
-			throw new Exception("Lastname is null or empty");
+		if (lastName1 == null || lastName1.trim().isEmpty()) {
+			throw new Exception("Lastname1 is null or empty");
+		}
+		
+		if (lastName2 == null || lastName2.trim().isEmpty()) {
+			throw new Exception("Lastname2 is null or empty");
 		}
 		
 		if (nif == null || nif.trim().isEmpty()) {
@@ -43,7 +46,8 @@ public class PersonsController {
 		
 		Person p = new Person();
 		p.setName(name);
-		p.setLastName(lastName);
+		p.setLastName1(lastName1);
+		p.setLastName2(lastName2);
 		p.setNif(nif);
 		p.setAddress(address);
 		p.setPostalCode(postalCode);
