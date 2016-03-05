@@ -2,7 +2,9 @@ package com.github.greboreda.example.web.components;
 
 import java.util.List;
 
+import org.apache.tapestry5.EventConstants;
 import org.apache.tapestry5.annotations.InjectComponent;
+import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Property;
 import org.apache.tapestry5.corelib.components.Zone;
@@ -14,10 +16,7 @@ import com.github.greboreda.example.web.controllers.PersonsController;
 public class ShowPersons {
 	
 	@Inject
-	PersonsController personsController;
-
-	@InjectComponent
-	private Zone personsZone;	
+	private PersonsController personsController;
 	
 	@Parameter(required=true)
 	@Property
@@ -25,9 +24,19 @@ public class ShowPersons {
 	
 	@Property
 	private Person currentPerson;
+
+	@Property
+	private String personsPattern;
 	
-	Object onChangeSearchPersonsInput() {
-		personsToShow = personsController.findPersonsByNamePattern("");
-		return personsZone.getBody();
+	@InjectComponent
+	private Zone personsZone;
+
+	
+	@OnEvent(value=EventConstants.ACTION, component="searchPersonsForm")
+	Object searchPersons() {
+		personsToShow = personsController.findPersonsByNamePattern(personsPattern);
+		return personsZone.getBody();		
 	}
+	
+	
 }

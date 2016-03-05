@@ -55,14 +55,14 @@ public class PersonDaoHibernate extends GenericDaoHibernate<PersonVO,Long> imple
 		Session session = sessionFactory.getCurrentSession();
 		
 		String queryString = 
-				" select p from PersonVO p " +
+				" from PersonVO p " +
 				" where " +
-				" p.name like :pattern " +
-				" or p.lastName1 like :pattern " +
-				" or p.lastName2 like :pattern ";
+				" lower(p.name) like :pattern " +
+				" or lower(p.lastName1) like :pattern " +
+				" or lower(p.lastName2) like :pattern ";
 				
 		Query query = session.createQuery(queryString);
-		query.setParameter("pattern", namePattern);
+		query.setParameter("pattern", "%" + namePattern.toLowerCase() + "%");
 		
 		@SuppressWarnings("unchecked")
 		List<PersonVO> personsVO = (List<PersonVO>) query.list();

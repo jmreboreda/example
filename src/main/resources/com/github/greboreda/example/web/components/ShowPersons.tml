@@ -23,15 +23,15 @@
 			<div class="container-fluid">
 			
 				<div class="row person-searcher">
-					<div class="col-md-4">
-					    <div class="right-inner-addon">
+					<t:form t:id="searchPersonsForm" zone="persons-zone">
+						<div class="col-md-4 right-inner-addon">
 						    <i class="glyphicon glyphicon-search"></i>
-							<input class="form-control" placeholder="Buscar" type="search"></input>							
+							<t:textfield t:id="personsPattern" placeholder="Buscar"/>							
 						</div>
-					</div>
-					<div class="col-md-1">
-						<t:eventlink t:id="changeSearchPersonsInput" id="search-persons-link" zone="persons-zone">Busca!</t:eventlink>
-					</div>
+						<div class="col-md-1">
+							<input type="submit" class="btn btn-primary" value="Buscar"/>
+						</div>
+					</t:form>					
 				</div>
 
 				<t:zone t:id="personsZone" id="persons-zone">		

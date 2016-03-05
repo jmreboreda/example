@@ -3,8 +3,10 @@ package com.github.greboreda.example.web.controllers;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.github.greboreda.example.model.person.Person;
 import com.github.greboreda.example.services.PersonsManager;
 
@@ -60,6 +62,16 @@ public class PersonsController {
 	}
 
 	public List<Person> findPersonsByNamePattern(String namePattern) {
-		return personsManager.findPersonsByNamePattern(namePattern);
+		
+		List<Person> persons = null;
+		
+		if(StringUtils.isNotBlank(namePattern)) {
+			persons = personsManager.findPersonsByNamePattern(namePattern);			
+		}
+		else {
+			persons = personsManager.findAllPersons();			
+		}
+		
+		return persons;
 	}
 }
