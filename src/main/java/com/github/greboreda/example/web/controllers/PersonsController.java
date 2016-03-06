@@ -16,7 +16,7 @@ public class PersonsController {
 	@Autowired
 	PersonsManager personsManager;
 	
-	public void createPerson(String name, String lastName1, String lastName2, String nif, String address, String postalCode, String location) throws Exception{
+	public void createPerson(String name, String lastName1, String lastName2, String nif) throws Exception{
 		
 		if (name == null || name.trim().isEmpty()) {
 			throw new Exception("name is null or empty");
@@ -34,26 +34,11 @@ public class PersonsController {
 			throw new Exception("NIF is null or empty");
 		}
 		
-		if (address == null || address.trim().isEmpty()) {
-			throw new Exception("Address is null or empty");
-		}
-		
-		if (postalCode == null || postalCode.trim().isEmpty()) {
-			throw new Exception("Postal code is null or empty");
-		}
-		
-		if (location == null || location.trim().isEmpty()) {
-			throw new Exception("Location is null or empty");
-		}
-		
 		Person p = new Person();
 		p.setName(name);
 		p.setLastName1(lastName1);
 		p.setLastName2(lastName2);
 		p.setNif(nif);
-		p.setAddress(address);
-		p.setPostalCode(postalCode);
-		p.setLocation(location);
 		personsManager.createPerson(p);
 	}
 	

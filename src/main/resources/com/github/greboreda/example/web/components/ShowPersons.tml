@@ -44,22 +44,14 @@
 					<t:if test="personsToShow">
 					<table class="table table-condensed table-striped">			
 						<tr>
-							<th>Nombre</th>
-							<th>Apellidos</th>			
+							<th>Apellidos y Nombre</th>			
 							<th>NIF</th>
-							<th>Dirección</th>
-							<th>CodPostal</th>
-							<th>Localidad</th>
 						</tr>
 										
 						<t:loop source="personsToShow" value="currentPerson">
 						<tr>
-							<td>${currentPerson.name}</td>
-							<td>${currentPerson.lastName1} ${currentPerson.lastName2}</td>
+							<td>${currentPerson.lastName1} ${currentPerson.lastName2}, ${currentPerson.name}</td>
 							<td>${currentPerson.nif}</td>
-							<td>${currentPerson.address}</td>
-							<td>${currentPerson.postalCode}</td>
-							<td>${currentPerson.location}</td>
 						</tr>
 						</t:loop>			
 					</table>

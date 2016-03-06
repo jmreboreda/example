@@ -27,22 +27,10 @@
 					<div class="col-md-2 col-md-push-0">
 						<t:textfield t:id="nif" placeholder="NIF"/>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 col-md-push-0">
-						<t:textfield t:id="address" placeholder="Dirección"/>
-					</div>
-					<div class="col-md-2 col-md-push-0">
-						<t:textfield t:id="postalCode" placeholder="Código postal"/>
-					</div>
-					<div class="col-md-3 col-md-push-0">
-						<t:textfield t:id="location" placeholder="Localidad"/>
-					</div>
 					<div class="col-md-2">
 						<input type="submit" class="btn btn-primary" value="Añadir"/>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</t:form>
