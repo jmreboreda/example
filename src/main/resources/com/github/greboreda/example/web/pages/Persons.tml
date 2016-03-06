@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html t:type="AppLayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
 	
 	<div class="container-fluid">

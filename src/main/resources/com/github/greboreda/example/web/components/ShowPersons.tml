@@ -1,5 +1,8 @@
-<t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter"
+  	xmlns:j="tapestry-library:jquery">
 
+	<!-- Hacer un tag style aquí es una guarrada. Pero me concedo la licencia  -->
 	<style>
 		.person-searcher {
 			margin-bottom: 15px;
@@ -23,14 +26,16 @@
 			<div class="container-fluid">
 			
 				<div class="row person-searcher">
-					<t:form t:id="searchPersonsForm" zone="persons-zone">
+					<t:form t:id="searchPersonsForm" zone="persons-zone" autocomplete="off">
 						<div class="col-md-4 right-inner-addon">
 						    <i class="glyphicon glyphicon-search"></i>
 							<t:textfield t:id="personsPattern" placeholder="Buscar"/>							
 						</div>
+						<!-- 
 						<div class="col-md-1">
 							<input type="submit" class="btn btn-primary" value="Buscar"/>
 						</div>
+						 -->
 					</t:form>					
 				</div>
 
