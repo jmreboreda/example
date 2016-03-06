@@ -24,9 +24,6 @@ public class PersonMapper {
 		person.setLastName1(personVO.getLastName1());
 		person.setLastName2(personVO.getLastName2());
 		person.setNif(personVO.getNif());
-		person.setAddress(personVO.getAddress());
-		person.setPostalCode(personVO.getPostalCode());
-		person.setLocation(personVO.getLocation());
 		
 		if(CollectionUtils.isEmpty(telephones) == false) {
 		
@@ -57,9 +54,6 @@ public class PersonMapper {
 		personVO.setLastName1(person.getLastName1());
 		personVO.setLastName2(person.getLastName2());
 		personVO.setNif(person.getNif());
-		personVO.setAddress(person.getAddress());
-		personVO.setPostalCode(person.getPostalCode());
-		personVO.setLocation(person.getLocation());
 		
 		return personVO;
 	}

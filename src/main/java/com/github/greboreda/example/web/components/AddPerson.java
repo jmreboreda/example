@@ -49,26 +49,14 @@ public class AddPerson {
 	@InjectComponent("nif")
 	private TextField nifField;
 	
-	@InjectComponent("address")
-	private TextField addressField;
-	
-	@InjectComponent("postalCode")
-	private TextField postalCodeField;
-	
-	@InjectComponent("location")
-	private TextField locationField;
-	
 	void onValidateFromNames() {
 		try {
-			personsController.createPerson(firstName, lastName1, lastName2, nif, address, postalCode, location);
+			personsController.createPerson(firstName, lastName1, lastName2, nif);
 		} catch (Exception e) {
 			form.recordError(firstNameField, "First Name is required.");
 			form.recordError(lastName1Field, "Lastname1 is required.");
 			form.recordError(lastName2Field, "Lastname2 is required.");
 			form.recordError(nifField, "NIF is required.");
-			form.recordError(addressField, "Address is required.");
-			form.recordError(postalCodeField, "Postal code is required.");
-			form.recordError(locationField, "Location is required.");
 		}
 	}
 }
