@@ -90,7 +90,6 @@
 			<type>jar</type>
 			<scope>test</scope>
 		</dependency>
-		<!-- 
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
@@ -98,7 +97,6 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
-		 -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -119,6 +117,13 @@
 			<artifactId>tapestry-security</artifactId>
 			<version>0.6.3</version>
 		</dependency>
+		<!-- 
+		<dependency>
+			<groupId>com.github.lltyk</groupId>
+			<artifactId>tapestry5-jquery</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-compress</artifactId>

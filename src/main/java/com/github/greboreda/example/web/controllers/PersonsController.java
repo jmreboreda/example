@@ -4,6 +4,8 @@ package com.github.greboreda.example.web.controllers;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,8 @@ public class PersonsController {
 
 	@Autowired
 	PersonsManager personsManager;
+	
+	Logger logger = LoggerFactory.getLogger(PersonsController.class);
 	
 	public void createPerson(String name, String lastName1, String lastName2, String nif) throws Exception{
 		
@@ -40,6 +44,8 @@ public class PersonsController {
 		p.setLastName2(lastName2);
 		p.setNif(nif);
 		personsManager.createPerson(p);
+		
+		logger.info(String.format("Created Person [%s]", p.toString()));
 	}
 	
 	public List<Person> findAllPersons() {

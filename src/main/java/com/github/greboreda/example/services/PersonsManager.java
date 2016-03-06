@@ -100,12 +100,14 @@ public class PersonsManager {
 		
 		PersonVO personVO = PersonMapper.proccessBOVO(person);
 		personDao.create(personVO);
+		person.setId(personVO.getId());
 				
 		if( CollectionUtils.isEmpty(person.getTelephones()) == false ) {
 			
 			for(Telephone telephone : person.getTelephones()) {
 				TelephoneVO telephoneVO = TelephonesMapper.proccessBOVO(telephone, personVO);
 				telephoneDao.create(telephoneVO);
+				telephone.setId(telephoneVO.getId());
 			}
 			
 		}

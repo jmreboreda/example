@@ -1,5 +1,7 @@
 package com.github.greboreda.example.model.telephone;
 
+import org.apache.commons.lang.builder.ReflectionToStringBuilder;
+
 import com.github.greboreda.example.model.BusinessObject;
 
 public class Telephone implements BusinessObject {
@@ -22,5 +24,8 @@ public class Telephone implements BusinessObject {
 		this.number = number;
 	}
 
+	public String toString() {
+		return ReflectionToStringBuilder.toString(this);
+	}
 	
 }
