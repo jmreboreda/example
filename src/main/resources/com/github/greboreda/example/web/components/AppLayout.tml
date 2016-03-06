@@ -3,25 +3,36 @@
 
 	<head>
 		<meta charset="utf-8" />	 
-		<title>${message:appTitle}</title>
+		<title>${message:appTitle}</title>		
 	</head>
 
 	<body>
-		<nav class="navbar navbar-default" role="navigation">
-			<div class="navbar-header">
-				<p class="navbar-brand">Gestoría MOLDES</p>
-				<p class="navbar-text">Aplicación de control de contratos laborales</p>
-				<p class="navbar-text navbar-right">
-					${username}(<t:actionlink t:id="logout">logout</t:actionlink>)
-				</p>
+	
+		<div class="container-fluid">
+		
+			<div class="row">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="navbar-header">
+						<p class="navbar-brand">Gestoría MOLDES</p>
+						<p class="navbar-text">Aplicación de control de contratos laborales</p>
+						<p class="navbar-text navbar-right">
+							${username}(<t:actionlink t:id="logout">logout</t:actionlink>)
+						</p>
+					</div>
+				</nav>
 			</div>
-		</nav>
 		
-		<t:body/>
-		
-		<footer>Este es mi footer</footer>
-		
+			<div class="row">
+				<t:body/>	
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<footer>Este es mi footer</footer>
+				</div>
+			</div>
+
+		</div>
+
 	</body>
-
-
 </html>

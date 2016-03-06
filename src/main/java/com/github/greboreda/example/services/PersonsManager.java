@@ -32,16 +32,21 @@ public class PersonsManager {
 		
 		List<PersonVO> personsVO = personDao.findAllPersons();
 		
-		List<Person> persons = new ArrayList<Person>();
-		for(PersonVO personVO : personsVO) {
-			persons.add(PersonMapper.proccessVOBO(personVO, null));
-		}
+		List<Person> persons = mapPersonsVOList(personsVO);
 		
 		for(Person person : persons) {
 			List<Telephone> telephones = this.findTelephonesByPersonId(person.getId());
 			person.setTelephones(telephones);
 		}
 		
+		return persons;
+	}
+
+	private List<Person> mapPersonsVOList(List<PersonVO> personsVO) {
+		List<Person> persons = new ArrayList<Person>();
+		for(PersonVO personVO : personsVO) {
+			persons.add(PersonMapper.proccessVOBO(personVO, null));
+		}
 		return persons;
 	}
 	
@@ -62,6 +67,15 @@ public class PersonsManager {
 		
 		return person;
 
+	}
+	
+	public List<Person> findPersonsByNamePattern(String namePattern) {
+
+		List<PersonVO> personsVO = personDao.findPersonsByNamePattern(namePattern);
+		
+		List<Person> persons = mapPersonsVOList(personsVO);
+		
+		return persons;
 	}
 	
 	public List<Telephone> findTelephonesByPersonId(Long personId) {
@@ -86,12 +100,14 @@ public class PersonsManager {
 		
 		PersonVO personVO = PersonMapper.proccessBOVO(person);
 		personDao.create(personVO);
+		person.setId(personVO.getId());
 				
 		if( CollectionUtils.isEmpty(person.getTelephones()) == false ) {
 			
 			for(Telephone telephone : person.getTelephones()) {
 				TelephoneVO telephoneVO = TelephonesMapper.proccessBOVO(telephone, personVO);
 				telephoneDao.create(telephoneVO);
+				telephone.setId(telephoneVO.getId());
 			}
 			
 		}

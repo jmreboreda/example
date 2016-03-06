@@ -17,6 +17,7 @@ import org.apache.tapestry5.services.Request;
 import org.apache.tapestry5.services.RequestFilter;
 import org.apache.tapestry5.services.RequestHandler;
 import org.apache.tapestry5.services.Response;
+import org.got5.tapestry5.jquery.JQuerySymbolConstants;
 import org.slf4j.Logger;
 import org.tynamo.security.SecuritySymbols;
 import org.tynamo.shiro.extension.realm.text.ExtendedPropertiesRealm;
@@ -68,11 +69,12 @@ public class AppModule {
 		// locale names;
 		// the first locale name is the default when there's no reasonable
 		// match).
-		configuration.add(SymbolConstants.SUPPORTED_LOCALES, "en");
+		configuration.add(SymbolConstants.SUPPORTED_LOCALES, "es");
 		configuration.add(SymbolConstants.HMAC_PASSPHRASE, new BigInteger(130,
 				new SecureRandom()).toString(32));
 		configuration.add(SymbolConstants.JAVASCRIPT_INFRASTRUCTURE_PROVIDER, "jquery");
 		configuration.add(SecuritySymbols.SUCCESS_URL, "/index");
+		configuration.add(JQuerySymbolConstants.JQUERY_ALIAS, "$j");
 	}
 	
 	/**

@@ -3,6 +3,8 @@ package com.github.greboreda.example.model.person;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang.builder.ReflectionToStringBuilder;
+
 import com.github.greboreda.example.model.BusinessObject;
 import com.github.greboreda.example.model.telephone.Telephone;
 
@@ -68,5 +70,9 @@ public class Person implements BusinessObject {
 	
 	public List<Telephone> getTelephones() {
 		return this.telephones;
-	}	
+	}
+	
+	public String toString() {
+		return ReflectionToStringBuilder.toString(this);
+	}
 }

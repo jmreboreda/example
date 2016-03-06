@@ -1,34 +1,70 @@
-<t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+<t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter"
+  	xmlns:j="tapestry-library:jquery">
+
+	<!-- Hacer un tag style aquí es una guarrada. Pero me concedo la licencia  -->
+	<style>
+		.person-searcher {
+			margin-bottom: 15px;
+		}
+		.right-inner-addon i {
+			position: absolute;
+			right: 10px;
+			padding: 10px 12px;
+			pointer-events: none;
+		}
+	</style>
 
 	<div class="panel panel-default">
+
 		<div class="panel panel-info">
-			<div class="panel-heading">
-			Personas guardadas
-			</div>
+			<div class="panel-heading">Personas guardadas</div>
 		</div>
 
 		<div class="panel-body">
-			<t:unless test="personsToShow">
-				<p>No hay personas</p>
-			</t:unless>
 			
-			<table class="table table-condensed table-striped">			
-					<tr>
-						<th>Apellidos y Nombre</th>			
-						<th>NIF</th>
-					</tr>
-					
-					<t:loop source="personsToShow" value="currentPerson">
-					<tr>
-						<td>${currentPerson.lastName1} ${currentPerson.lastName2}, ${currentPerson.name}</td>
-						<td>${currentPerson.nif}</td>
-					</tr>
-					</t:loop>
-			</table>
+			<div class="container-fluid">
 			
+				<div class="row person-searcher">
+					<t:form t:id="searchPersonsForm" zone="persons-zone" autocomplete="off">
+						<div class="col-md-4 right-inner-addon">
+						    <i class="glyphicon glyphicon-search"></i>
+							<t:textfield t:id="personsPattern" placeholder="Buscar"/>							
+						</div>
+						<!-- 
+						<div class="col-md-1">
+							<input type="submit" class="btn btn-primary" value="Buscar"/>
+						</div>
+						 -->
+					</t:form>					
+				</div>
+
+				<t:zone t:id="personsZone" id="persons-zone">		
+				<div class="row">
+				
+					<t:unless test="personsToShow">
+						<p>No hay personas</p>
+					</t:unless>
+								
+					<t:if test="personsToShow">
+					<table class="table table-condensed table-striped">			
+						<tr>
+							<th>Apellidos y Nombre</th>			
+							<th>NIF</th>
+						</tr>
+										
+						<t:loop source="personsToShow" value="currentPerson">
+						<tr>
+							<td>${currentPerson.lastName1} ${currentPerson.lastName2}, ${currentPerson.name}</td>
+							<td>${currentPerson.nif}</td>
+						</tr>
+						</t:loop>			
+					</table>
+					</t:if>
+				</div>
+				</t:zone>
+			</div>
 		</div>
-
 	</div>
-
 </t:container>
 
