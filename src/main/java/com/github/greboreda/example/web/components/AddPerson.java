@@ -25,15 +25,6 @@ public class AddPerson {
 	@Property
 	private String nif;
 	
-	@Property
-	private String address;
-	
-	@Property
-	private String postalCode;
-	
-	@Property
-	private String location;
-
 	@InjectComponent("names")
 	private Form form;
 	
