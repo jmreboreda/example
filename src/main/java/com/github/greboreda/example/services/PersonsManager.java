@@ -75,6 +75,11 @@ public class PersonsManager {
 		
 		List<Person> persons = mapPersonsVOList(personsVO);
 		
+		for(Person person : persons) {
+			List<Telephone> telephones = this.findTelephonesByPersonId(person.getId());
+			person.setTelephones(telephones);
+		}
+		
 		return persons;
 	}
 	
