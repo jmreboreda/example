@@ -12,6 +12,7 @@ import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 import com.github.greboreda.example.model.person.Person;
+import com.github.greboreda.example.model.telephone.Telephone;
 import com.github.greboreda.example.web.controllers.PersonsController;
 
 @Import(library = "context:js/utils.js")
@@ -24,8 +25,15 @@ public class ShowPersons {
 	@Property
 	private List<Person> personsToShow;
 	
+/*	@Parameter(required=true)
+	@Property
+	private List<Telephone> phonesToShow;*/
+	
 	@Property
 	private Person currentPerson;
+	
+	@Property
+	private Telephone currentPhone;
 
 	@Property
 	private String personsPattern;

@@ -51,12 +51,21 @@
 						<tr>
 							<th>Apellidos y Nombre</th>			
 							<th>NIF</th>
+							<th>Teléfono</th>
 						</tr>
 										
 						<t:loop source="personsToShow" value="currentPerson">
 						<tr>
 							<td>${currentPerson.lastName1} ${currentPerson.lastName2}, ${currentPerson.name}</td>
 							<td>${currentPerson.nif}</td>
+							<t:if test="currentPerson.telephones">
+								<t:loop source="currentPerson.telephones" value="currentPhone">
+									<td>${currentPhone.number}</td>
+								</t:loop>
+								<p:else>
+									<td>No disponible</td>
+								</p:else>
+							</t:if>
 						</tr>
 						</t:loop>			
 					</table>
