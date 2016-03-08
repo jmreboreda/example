@@ -59,9 +59,13 @@
 							<td>${currentPerson.lastName1} ${currentPerson.lastName2}, ${currentPerson.name}</td>
 							<td>${currentPerson.nif}</td>
 							<t:if test="currentPerson.telephones">
-								<t:loop source="currentPerson.telephones" value="currentPhone">
-									<td>${currentPhone.number}</td>
-								</t:loop>
+								<td>
+									<t:loop source="currentPerson.telephones" value="currentPhone">
+										<ul>
+											<li>${currentPhone.number}</li>
+										</ul>
+									</t:loop>
+									</td>
 								<p:else>
 									<td>No disponible</td>
 								</p:else>
