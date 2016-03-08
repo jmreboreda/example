@@ -24,15 +24,21 @@ default-lazy-init="true">
 
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
-				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.dialect">com.github.greboreda.example.util.ImprovedPosgresSQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.format_sql">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.hbm2ddl.import_files">initial_data.sql</prop>				
 			</props>
 		</property>
 
 		<property name="annotatedClasses">
 			<list>
+			    <value>com.github.greboreda.example.model.authorization.user.UserVO</value>			
+			    <value>com.github.greboreda.example.model.authorization.role.RoleVO</value>
+			    <!-- 
+			    <value>com.github.greboreda.example.model.authorization.permission.PermissionVO</value>		
+				 -->
 			    <value>com.github.greboreda.example.model.person.PersonVO</value>
 			    <value>com.github.greboreda.example.model.telephone.TelephoneVO</value>
 			</list>

@@ -12,7 +12,7 @@ import com.github.greboreda.example.web.components.AddPerson;
 import com.github.greboreda.example.web.components.ShowPersons;
 import com.github.greboreda.example.web.controllers.PersonsController;
 
-//@RequiresRoles("user")
+@RequiresRoles("user")
 public class Persons {
 	
 	@Inject

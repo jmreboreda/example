@@ -22,6 +22,8 @@ import org.slf4j.Logger;
 import org.tynamo.security.SecuritySymbols;
 import org.tynamo.shiro.extension.realm.text.ExtendedPropertiesRealm;
 
+import com.github.greboreda.example.security.UserRealm;
+
 /**
  * This module is automatically included as part of the Tapestry IoC Registry,
  * it's a good place to configure and extend Tapestry, or to place your own
@@ -140,7 +142,9 @@ public class AppModule {
 	
 	@Contribute(WebSecurityManager.class)
 	public static void addRealms(Configuration<Realm> configuration) {
-		ExtendedPropertiesRealm realm = new ExtendedPropertiesRealm("classpath:shiro-users.properties");
-		configuration.add(realm);
+		//ExtendedPropertiesRealm realm = new ExtendedPropertiesRealm("classpath:shiro-users.properties");
+		
+		Realm appRealm = new UserRealm();
+		configuration.add(appRealm);
 	}
 }

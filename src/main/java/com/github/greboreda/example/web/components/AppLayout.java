@@ -11,12 +11,11 @@ public class AppLayout {
 		
 	void beginRender() {
 		Subject currentUser = SecurityUtils.getSubject();
-		//username = currentUser.getPrincipal().toString();
-		username = "Not user";
+		username = currentUser.getPrincipal().toString();
 	}
 
 	void onActionFromLogout() {
 		Subject currentUser = SecurityUtils.getSubject();
-		//currentUser.logout();
+		currentUser.logout();
 	}
 }

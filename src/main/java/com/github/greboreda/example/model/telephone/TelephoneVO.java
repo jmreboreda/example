@@ -43,7 +43,8 @@ public class TelephoneVO implements ValueObject {
 	}
 	
 	@ManyToOne
-	@JoinColumn(name = "personId")
+	@JoinColumn(name = "personId", nullable = false)
+	@org.hibernate.annotations.ForeignKey(name = "fk_person")
 	public PersonVO getPerson() {
 		return person;
 	}
