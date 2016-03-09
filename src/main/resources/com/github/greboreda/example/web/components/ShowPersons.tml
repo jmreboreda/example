@@ -60,14 +60,13 @@
 							<td>${currentPerson.nif}</td>
 							<t:if test="currentPerson.telephones">
 								<td>
-									<t:loop source="currentPerson.telephones" value="currentPhone">
-										<ul>
-											<li>${currentPhone.number}</li>
-										</ul>
-									</t:loop>
-									</td>
-								<p:else>
-									<td>No disponible</td>
+									<ul class="list-unstyled">
+									<!-- <ul class="list-inline"> -->
+										<li t:type="loop" source="currentPerson.telephones" value="currentPhone">${currentPhone.number}</li>
+									</ul>
+								</td>
+ 								<p:else>
+									<td></td>
 								</p:else>
 							</t:if>
 						</tr>
