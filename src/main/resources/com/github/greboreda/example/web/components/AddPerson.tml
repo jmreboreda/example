@@ -15,7 +15,7 @@
 				</div>
 -->
 				<div class="row">
-					<div class="col-md-2 col-md-push-0">	
+					<div class="col-md-2 col-md-push-0">
 						<t:textfield t:id="firstName" placeholder="Nombre"/>
 					</div>
 					<div class="col-md-2 col-md-push-0">
@@ -28,7 +28,7 @@
 						<t:textfield t:id="nif" placeholder="NIF"/>
 					</div>
 					<div class="col-md-2">
-						<input type="submit" class="btn btn-primary" value="Añadir"/>
+						<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Añadir</button>
 					</div>
 				</div>
 			</div>

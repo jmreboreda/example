@@ -16,7 +16,7 @@
 						<p class="navbar-brand">Gestoría MOLDES</p>
 						<p class="navbar-text">Aplicación de control de contratos laborales</p>
 						<p class="navbar-text navbar-right">
-							${username}(<t:actionlink t:id="logout">logout</t:actionlink>)
+							<span class="glyphicon glyphicon glyphicon-user"></span> ${username} [<t:actionlink t:id="logout">logout</t:actionlink>]
 						</p>
 					</div>
 				</nav>
