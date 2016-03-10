@@ -25,10 +25,6 @@ public class ShowPersons {
 	@Property
 	private List<Person> personsToShow;
 	
-/*	@Parameter(required=true)
-	@Property
-	private List<Telephone> phonesToShow;*/
-	
 	@Property
 	private Person currentPerson;
 	

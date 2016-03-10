@@ -61,7 +61,6 @@
 							<t:if test="currentPerson.telephones">
 								<td>
 									<ul class="list-unstyled">
-									<!-- <ul class="list-inline"> -->
 										<li t:type="loop" source="currentPerson.telephones" value="currentPhone">${currentPhone.number}</li>
 									</ul>
 								</td>
