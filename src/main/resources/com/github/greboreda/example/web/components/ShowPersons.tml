@@ -58,16 +58,9 @@
 						<tr>
 							<td>${currentPerson.lastName1} ${currentPerson.lastName2}, ${currentPerson.name}</td>
 							<td>${currentPerson.nif}</td>
-							<t:if test="currentPerson.telephones">
-								<td>
-									<ul class="list-unstyled">
-										<li t:type="loop" source="currentPerson.telephones" value="currentPhone">${currentPhone.number}</li>
-									</ul>
-								</td>
- 								<p:else>
-									<td></td>
-								</p:else>
-							</t:if>
+							<td>
+								<t:telephones telephones="currentPerson.telephones" personId="currentPerson.id"/>
+							</td>
 						</tr>
 						</t:loop>			
 					</table>

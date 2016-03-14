@@ -25,7 +25,8 @@ public class Telephone implements BusinessObject {
 	}
 
 	public String toString() {
-		return ReflectionToStringBuilder.toString(this);
+		//return ReflectionToStringBuilder.toString(this);
+		return this.number;
 	}
 	
 }
