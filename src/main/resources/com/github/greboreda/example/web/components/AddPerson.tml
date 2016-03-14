@@ -15,20 +15,28 @@
 				</div>
 -->
 				<div class="row">
-					<div class="col-md-2 col-md-push-0">	
+					<div class="col-md-12">
 						<t:textfield t:id="firstName" placeholder="Nombre"/>
 					</div>
-					<div class="col-md-2 col-md-push-0">
+				</div>
+				<div class="row">
+					<div class="col-md-12">
 						<t:textfield t:id="lastName1" placeholder="Apellido 1º"/>
 					</div>
-					<div class="col-md-2 col-md-push-0">
+				</div>
+				<div class="row">
+					<div class="col-md-12">
 						<t:textfield t:id="lastName2" placeholder="Apellido 2º"/>
 					</div>
-					<div class="col-md-2 col-md-push-0">
+				</div>
+				<div class="row">
+					<div class="col-md-12">
 						<t:textfield t:id="nif" placeholder="NIF"/>
 					</div>
+				</div>
+				<div class="row">
 					<div class="col-md-2">
-						<input type="submit" class="btn btn-primary" value="Añadir"/>
+						<button type="submit" class="btn btn-primary">Añadir</button>
 					</div>
 				</div>
 			</div>

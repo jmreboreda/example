@@ -1,0 +1,13 @@
+<t:container t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+	<ul class="list-unstyled">
+		<li t:type="loop" source="telephonesToShow" value="telephone">${telephone}</li>
+	</ul>
+	<t:form t:id="addPhoneForm">
+		<div class="row">
+<!-- 			<div class="col-md-5">
+				<input t:type="textfield" t:id="newPhoneNumber" placeholder="Nuevo teléfono"/>
+			</div> -->
+			<input type="submit" class="btn btn-primary btn-sm" value="Añadir teléfono"/>
+		</div>
+	</t:form>
+</t:container>

@@ -51,12 +51,16 @@
 						<tr>
 							<th>Apellidos y Nombre</th>			
 							<th>NIF</th>
+							<th>Teléfono</th>
 						</tr>
 										
 						<t:loop source="personsToShow" value="currentPerson">
 						<tr>
 							<td>${currentPerson.lastName1} ${currentPerson.lastName2}, ${currentPerson.name}</td>
 							<td>${currentPerson.nif}</td>
+							<td>
+								<t:telephones telephones="currentPerson.telephones" personId="currentPerson.id"/>
+							</td>
 						</tr>
 						</t:loop>			
 					</table>

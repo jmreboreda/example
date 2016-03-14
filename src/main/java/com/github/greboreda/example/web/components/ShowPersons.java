@@ -8,10 +8,12 @@ import org.apache.tapestry5.annotations.InjectComponent;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.annotations.Property;
+import org.apache.tapestry5.corelib.components.TextField;
 import org.apache.tapestry5.corelib.components.Zone;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 import com.github.greboreda.example.model.person.Person;
+import com.github.greboreda.example.model.telephone.Telephone;
 import com.github.greboreda.example.web.controllers.PersonsController;
 
 @Import(library = "context:js/utils.js")
@@ -26,6 +28,9 @@ public class ShowPersons {
 	
 	@Property
 	private Person currentPerson;
+	
+	@Property
+	private Telephone currentPhone;
 
 	@Property
 	private String personsPattern;
