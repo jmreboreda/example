@@ -27,11 +27,11 @@ public class Telephones {
 	@Property
 	Person person;
 	
-	@InjectComponent
+	@Property
 	ShowTelephones telephonesToShow;
 	
 	void beginRender() {
-		person = personsController.findPersonById(personId);
+//		person = personsController.findPersonById(personId);
 //		telephones = person.getTelephones();
 	}
 	
