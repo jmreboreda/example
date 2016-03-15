@@ -17,12 +17,4 @@ public class ShowTelephones {
 	@Property
 	Telephone telephone;
 	
-	@Property
-	String newPhoneNumber;
-	
-	@OnEvent(value=EventConstants.ACTION, component="addPhoneForm")
-	Object addTelephone() {
-		System.out.println("Pulsado botón. Teléfono: " + newPhoneNumber);	
-		return null;
-	}
 }

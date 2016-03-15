@@ -7,10 +7,9 @@
 					<t:addperson/>
 				</div>
 			</div>
-					<div class="col-md-10">
-						<t:showpersons personsToShow="persons"/>	
-					</div>
-
+				<div class="col-md-10">
+					<t:showpersons personsToShow="persons"/>	
+				</div>
 		</div>
 	</div>
 </html>
