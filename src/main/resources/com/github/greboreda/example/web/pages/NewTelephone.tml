@@ -1,0 +1,12 @@
+<html t:type="AppLayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2">
+				<div class="row">
+					<t:addtelephonetoperson/>
+				</div>
+			</div>
+		</div>
+	</div>
+</html>
