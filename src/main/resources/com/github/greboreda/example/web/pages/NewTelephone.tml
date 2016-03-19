@@ -2,9 +2,9 @@
 	
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-2">
+			<div class="col-md-6">
 				<div class="row">
-					<t:addtelephonetoperson/>
+					<t:textfield context="personId" t:id="newTelephone" placeholder="Nuevo teléfono"/>
 				</div>
 			</div>
 		</div>
