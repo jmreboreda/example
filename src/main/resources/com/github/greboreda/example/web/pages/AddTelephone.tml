@@ -1,0 +1,12 @@
+<html t:type="AppLayout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+
+	<h1>${personToAppendPhone.name}</h1>
+	
+	<t:form t:id="addTelephoneForm">
+		<t:textfield t:id="telephoneNumber"/>
+		<submit t:type="submit" class="btn btn-primary" value="Añadir teléfono" />
+	</t:form>
+	
+	
+
+</html>

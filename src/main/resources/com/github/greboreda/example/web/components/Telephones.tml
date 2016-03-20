@@ -2,6 +2,6 @@
 
 	<t:showtelephones telephonesToShow="telephones"/>
 	
-	<t:appendtelephonetoperson personToAppend="personId" />
+	<t:pagelink t:page="addTelephone" t:context="personId">Añadir teléfono</t:pagelink>	
 	
 </html>

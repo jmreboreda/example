@@ -14,21 +14,22 @@ import com.github.greboreda.example.web.controllers.PersonsController;
 public class Telephones {
 	
 	@Autowired
-	PersonsController personsController;
+	private PersonsController personsController;
 
 	@Property
 	@Parameter(required=true)
-	Long personId;
+	private Long personId;
 	
 	@Property
 	@Parameter(required=true)
-	List<Telephone> telephones;
+	private List<Telephone> telephones;
 
 	@Property
-	Person person;
+	private Person person;
 	
 	@Property
-	ShowTelephones telephonesToShow;
+	private ShowTelephones telephonesToShow;
+		
 	
 	void beginRender() {
 //		person = personsController.findPersonById(personId);
