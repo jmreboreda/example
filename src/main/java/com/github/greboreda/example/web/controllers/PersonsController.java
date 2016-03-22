@@ -90,7 +90,7 @@ public class PersonsController {
 		
 	}
 	
-	public void newTelephoneAtPersonId(String id, String newPhone) throws Exception{
+/*	public void newTelephoneAtPersonId(String id, String newPhone) throws Exception{
 		
 		Person person = null;
 		Long personId = Long.parseLong(id);
@@ -105,5 +105,5 @@ public class PersonsController {
 		telephone.setNumber(newPhone);
 		
 		appendTelephoneToPerson(person, telephone);
-	}
+	}*/
 }

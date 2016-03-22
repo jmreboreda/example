@@ -2,7 +2,6 @@ package com.github.greboreda.example.web.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.github.greboreda.example.model.person.Person;
 import com.github.greboreda.example.model.telephone.Telephone;
 import com.github.greboreda.example.services.PersonsManager;
@@ -13,7 +12,11 @@ public class TelephonesController {
 	@Autowired
 	PersonsManager personsManager;
 
-	public void appendTelephoneToPerson(Person person, String telephone) {
+	public void appendTelephoneToPerson(Person person, String telephone) throws Exception{
+		
+		if (telephone == null || telephone.trim().isEmpty()) {
+			throw new Exception("telephone is null or empty");
+		}
 		
 		Telephone phone = new Telephone();
 		phone.setNumber(telephone);

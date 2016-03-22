@@ -36,8 +36,12 @@ public class AddTelephone {
 		
 	@OnEvent(value=EventConstants.VALIDATE, component="addTelephoneForm")
 	void appendTelephoneToPerson(){
-		logger.debug("PersonId: " + personToAppendPhone.getId() + " telephoneNumber: " + telephoneNumber);
-		telephonesController.appendTelephoneToPerson(personToAppendPhone, telephoneNumber);
+		logger.debug("personId: " + personToAppendPhone.getId() + " telephoneNumber: " + telephoneNumber);
+		try {
+			telephonesController.appendTelephoneToPerson(personToAppendPhone, telephoneNumber);
+		} catch (Exception e) {
+			logger.debug("Número de teléfono: " + telephoneNumber + " -> " + e.toString());
+		}
 	}
 	
 	Object onSuccess(){
