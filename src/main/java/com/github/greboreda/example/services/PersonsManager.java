@@ -125,6 +125,10 @@ public class PersonsManager {
 			throw new NullPointerException("Person cannot be null");
 		}
 		
+		if(telephone == null) {
+			throw new NullPointerException("Telephone cannot be null");
+		}
+		
 		try {
 			PersonVO personVO = personDao.find(person.getId());
 			TelephoneVO telephoneVO = TelephonesMapper.proccessBOVO(telephone, personVO);
