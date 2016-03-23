@@ -3,7 +3,7 @@
 	<h1>${personToAppendPhone.name}</h1>
 	
 	<t:form t:id="addTelephoneForm">
-		<t:textfield t:id="telephoneNumber"/>
+		<t:textfield t:id="telephoneNumber" placeholder="Teléfono"/>
 		<submit t:type="submit" class="btn btn-primary" value="Añadir teléfono" />
 	</t:form>
 	

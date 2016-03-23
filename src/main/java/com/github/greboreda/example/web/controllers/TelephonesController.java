@@ -18,6 +18,13 @@ public class TelephonesController {
 			throw new Exception("telephone is null or empty");
 		}
 		
+		try{ 
+		    @SuppressWarnings("unused")
+			int numero = Integer.parseInt(telephone); 
+		}catch(NumberFormatException e){ 
+			throw new Exception("This is not a telephone number: " + telephone);
+		}  
+		
 		Telephone phone = new Telephone();
 		phone.setNumber(telephone);
 				
